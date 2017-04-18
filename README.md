@@ -10,4 +10,4 @@ Automation of TKMCE Eazy Campus staff evaluation using python and selenium
 Extract and copy to /usr/local/bin
 
 ## Usage
-$python eazy.py username password
+`$ python eazy.py username password`
