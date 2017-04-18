@@ -9,5 +9,5 @@ Automation of TKMCE Eazy Campus staff evaluation using python and selenium
 ->Download geckodriver from https://github.com/mozilla/geckodriver/releases 
 Extract and copy to /usr/local/bin
 
-##Usage
+## Usage
 $python eazy.py username password
