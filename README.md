@@ -11,4 +11,5 @@ Extract and copy to /usr/local/bin
 
 ## Usage
 In terminal run
+
 `$ python eazy.py username password`
