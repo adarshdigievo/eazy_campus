@@ -3,16 +3,17 @@ from selenium.webdriver.support.ui import WebDriverWait
 from selenium.webdriver.support import expected_conditions as EC
 from selenium.common.exceptions import TimeoutException
 from selenium.webdriver.common.by import By
+import sys
 
 browser	=	webdriver.Firefox()
 browser.get('http://210.212.227.210/tkmce/index.aspx')
 userElem	=	browser.find_element_by_id('txtUserName')
 
-userElem.send_keys('151062')   #admn no here
+userElem.send_keys(sys.argv[1])   #admn no here
 
 passwordElem	=	browser.find_element_by_id('txtPassword')
 
-passwordElem.send_keys('notrealpassword') # password here
+passwordElem.send_keys(sys.argv[2]) # password here
 
 loginElem	=	browser.find_element_by_id('btnLogin')
 loginElem.click()
