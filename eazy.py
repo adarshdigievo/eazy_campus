@@ -4,6 +4,7 @@ from selenium.webdriver.support import expected_conditions as EC
 from selenium.common.exceptions import TimeoutException
 from selenium.webdriver.common.by import By
 import sys
+import time
 
 browser	=	webdriver.Firefox()
 browser.get('http://210.212.227.210/tkmce/index.aspx')
@@ -14,7 +15,9 @@ userElem.send_keys(sys.argv[1])   #admn no here
 passwordElem	=	browser.find_element_by_id('txtPassword')
 
 passwordElem.send_keys(sys.argv[2]) # password here
-
+# A new captcha field was introduced in the eazy campus website, which require the user to enter the captcha.
+# Providing a time gap for the user to enter the captcha
+time.sleep(15)
 loginElem	=	browser.find_element_by_id('btnLogin')
 loginElem.click()
 try:
@@ -25,7 +28,9 @@ try:
     print "alert accepted"
 except TimeoutException:
     print "no alert"
-sEval	=	browser.find_element_by_id('ctl00_ContentPlaceHolder1_dlAlertLIst_dlAlertDisplay_ctl00_HyperLink1')
+    
+#Change in Content Placeholder name
+sEval	=	browser.find_element_by_id('ctl00_ContentPlaceHolder1_dlAlertLIst_dlAlertDisplay_ctl00_HyperLink2')
 sEval.click()
 try:
     WebDriverWait(browser, 20).until(EC.alert_is_present(),
